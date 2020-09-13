@@ -1,0 +1,22 @@
+{
+ "name": "airquality",
+ "description": "Enter your project description",
+ "author": {
+  "name": "Henry Finucane",
+  "email": "h.finucane@gmail.com"
+ },
+ "version": "0.1.0",
+ "binaryname": "airquality",
+ "frontend": {
+  "dir": "frontend",
+  "install": "npm install",
+  "build": "npm run build",
+  "bridge": "src",
+  "serve": "npm run dev"
+ },
+ "WailsVersion": "",
+ "CrossCompile": false,
+ "Platform": "",
+ "Architecture": "",
+ "LdFlags": ""
+}

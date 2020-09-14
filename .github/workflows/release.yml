@@ -1,0 +1,27 @@
+name: release
+on:
+  push:
+    branches:
+    - master
+jobs:
+  build:
+    name: build on ubuntu-latest
+    runs-on: ubuntu-latest
+    steps:
+    - name: Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.15
+      id: go
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Wails
+      run: |
+        go get -u github.com/wailsapp/wails/cmd/wails
+    - name: Ubuntu prereqs
+      run: |
+          set -e
+          sudo apt-get update
+          sudo apt-get install -y -q build-essential libgtk-3-dev libwebkit2gtk-4.0-dev
+    - name: Build
+      run: wails build

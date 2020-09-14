@@ -1,9 +1,7 @@
 
 
 <script>
-	import Modal from 'svelte-simple-modal';
 	import AirQuality from './components/AirQuality.svelte'
-	import logo from './logo.png';
 </script>
 
 <main>

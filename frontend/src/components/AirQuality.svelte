@@ -1,11 +1,12 @@
 <script>
-import { getContext } from 'svelte';
-
 let current;
 let label, lastSeen, pm2_5, pm2_5_10min_avg;
+let refreshing = false;
 
 function refresh() {
+    refreshing = true;
     window.backend.NewAirQuality().then((result) => {
+        refreshing = false;
         let outside = result.results.filter((x) => x.DEVICE_LOCATIONTYPE === "outside");
         current = outside.shift()
         console.log(current);
@@ -50,11 +51,13 @@ refresh();
     <p> last update at <br/> {lastSeen.toLocaleString()} </p>
     {/if}
 
-    <p><button on:click={refresh}>refresh</button></p>
+    <p><button disabled={refreshing} on:click={refresh}>refresh</button></p>
 
+    <!--
     <ul>
         <li> <a href="https://ww2.arb.ca.gov/resources/inhalable-particulate-matter-and-health">Inhalable Particulate Matter and Health</a> </li>
     </ul>
+    -->
 </main>
 
 <style>

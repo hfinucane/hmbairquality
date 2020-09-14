@@ -10,10 +10,6 @@ import (
 	"github.com/wailsapp/wails"
 )
 
-func basic() string {
-	return "custom!"
-}
-
 type AirQuality struct {
 	MapVersion       string `json:"mapVersion"`
 	BaseVersion      string `json:"baseVersion"`
@@ -98,7 +94,6 @@ func main() {
 		Colour: "#131313",
 	})
 
-	app.Bind(basic)
 	app.Bind(NewAirQuality)
 	app.Run()
 }

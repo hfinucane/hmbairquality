@@ -2,18 +2,14 @@
 
 <script>
 	import Modal from 'svelte-simple-modal';
-	import HelloWorld from './components/HelloWorld.svelte'
+	import AirQuality from './components/AirQuality.svelte'
 	import logo from './logo.png';
 </script>
 
 <main>
 	<div class="App">
 		<header class="App-header">
-			<Modal>
-				<img src={logo} class="App-logo" alt="logo" />
-				<p>Welcome to your new <code>wails/svelte</code> project.</p>
-				<HelloWorld/>
-			</Modal>
+                    <AirQuality/>
 		</header>
 	</div>
 </main>
